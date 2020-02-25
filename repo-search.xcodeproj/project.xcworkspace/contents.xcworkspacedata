@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:empresas-ioasys.xcodeproj">
+      location = "self:/Users/thallesaraujo/Documents/base project/repo-search.xcodeproj">
    </FileRef>
 </Workspace>

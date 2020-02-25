@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="VCMain" id="BYZ-38-t0r" customClass="VCMain" customModule="repo_search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="0hO-ML-r60">
+                                <rect key="frame" x="16" y="302.5" width="343" height="82"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m6a-Yi-t3x">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-k9-uP2">
+                                        <rect key="frame" x="147.5" y="52" width="48" height="30"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="didTapSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yUJ-Bh-AJK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="m6a-Yi-t3x" firstAttribute="width" secondItem="0hO-ML-r60" secondAttribute="width" id="YjP-Hy-dQl"/>
+                                </constraints>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="iF4-j9-5qI">
+                                <rect key="frame" x="177.5" y="333.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iF4-j9-5qI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="5XM-Cd-rwW"/>
+                            <constraint firstItem="0hO-ML-r60" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="SDp-di-3PR"/>
+                            <constraint firstItem="iF4-j9-5qI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Y3K-l6-5LA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0hO-ML-r60" secondAttribute="trailing" constant="16" id="ajw-Z2-fDG"/>
+                            <constraint firstItem="0hO-ML-r60" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cb1-Eh-7V8"/>
+                            <constraint firstItem="0hO-ML-r60" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s6B-uY-3Am"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="iF4-j9-5qI" id="rOu-mc-Qih"/>
+                        <outlet property="tfSearch" destination="m6a-Yi-t3x" id="fjZ-Bc-971"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="695" y="19"/>
+        </scene>
+        <!--Repos-->
+        <scene sceneID="nO9-RR-iH2">
+            <objects>
+                <viewController storyboardIdentifier="VCRepos" id="53H-is-sN6" customClass="VCRepos" customModule="repo_search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tC7-y5-rr6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvu-9C-hJA" customClass="UserComponent" customModule="repo_search" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="iZ1-BM-sWq"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7QP-gS-JC5">
+                                <rect key="frame" x="0.0" y="170" width="375" height="497"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoCell" rowHeight="79" id="C3R-lQ-n5y" customClass="RepoCell" customModule="repo_search" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C3R-lQ-n5y" id="aZl-GZ-kRs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="chl-oM-4VK">
+                                                    <rect key="frame" x="16" y="16" width="343" height="46.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Repo Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxS-Ga-40P">
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAY-IC-HAL">
+                                                            <rect key="frame" x="0.0" y="28.5" width="343" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="chl-oM-4VK" secondAttribute="trailing" constant="16" id="QYw-61-8yP"/>
+                                                <constraint firstItem="chl-oM-4VK" firstAttribute="top" secondItem="aZl-GZ-kRs" secondAttribute="top" constant="16" id="TkO-aB-4uq"/>
+                                                <constraint firstItem="chl-oM-4VK" firstAttribute="leading" secondItem="aZl-GZ-kRs" secondAttribute="leading" constant="16" id="cKO-51-Wkl"/>
+                                                <constraint firstAttribute="bottom" secondItem="chl-oM-4VK" secondAttribute="bottom" constant="16" id="eGz-cD-qO9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblRepoLanguage" destination="eAY-IC-HAL" id="bt2-ub-l6r"/>
+                                            <outlet property="lblRepoName" destination="SxS-Ga-40P" id="Y0w-Xe-E8w"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This user doesn't have any repository yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc9-9p-1Ui">
+                                <rect key="frame" x="16" y="186" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7QP-gS-JC5" firstAttribute="centerX" secondItem="4h4-V8-JIS" secondAttribute="centerX" id="5hR-IU-laG"/>
+                            <constraint firstItem="7QP-gS-JC5" firstAttribute="top" secondItem="Hvu-9C-hJA" secondAttribute="bottom" id="CuT-IM-GUB"/>
+                            <constraint firstItem="7QP-gS-JC5" firstAttribute="leading" secondItem="4h4-V8-JIS" secondAttribute="leading" id="J1c-F8-qNa"/>
+                            <constraint firstItem="4h4-V8-JIS" firstAttribute="trailing" secondItem="Hvu-9C-hJA" secondAttribute="trailing" id="Phb-zj-hAz"/>
+                            <constraint firstItem="4h4-V8-JIS" firstAttribute="bottom" secondItem="7QP-gS-JC5" secondAttribute="bottom" id="e9i-5J-Vd9"/>
+                            <constraint firstItem="4h4-V8-JIS" firstAttribute="trailing" secondItem="Xc9-9p-1Ui" secondAttribute="trailing" constant="16" id="eOi-fC-cWt"/>
+                            <constraint firstItem="4h4-V8-JIS" firstAttribute="trailing" secondItem="7QP-gS-JC5" secondAttribute="trailing" id="glK-QV-Ycd"/>
+                            <constraint firstItem="Xc9-9p-1Ui" firstAttribute="top" secondItem="Hvu-9C-hJA" secondAttribute="bottom" constant="16" id="jif-nb-Vo7"/>
+                            <constraint firstItem="Hvu-9C-hJA" firstAttribute="leading" secondItem="4h4-V8-JIS" secondAttribute="leading" id="mET-Gp-SmV"/>
+                            <constraint firstItem="Xc9-9p-1Ui" firstAttribute="leading" secondItem="4h4-V8-JIS" secondAttribute="leading" constant="16" id="nAj-KV-mcn"/>
+                            <constraint firstItem="Hvu-9C-hJA" firstAttribute="top" secondItem="4h4-V8-JIS" secondAttribute="top" id="oSM-X1-6xJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4h4-V8-JIS"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblNoRepos" destination="Xc9-9p-1Ui" id="0Yc-er-Jsg"/>
+                        <outlet property="tbvRepos" destination="7QP-gS-JC5" id="XdK-ck-m0q"/>
+                        <outlet property="userInfo" destination="Hvu-9C-hJA" id="8ft-JG-x9d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3z-X7-min" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464.8" y="19.340329835082461"/>
+        </scene>
+    </scenes>
+</document>
