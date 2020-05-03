@@ -1,0 +1,6 @@
+framework module Pods_repo_search {
+  umbrella header "Pods-repo-search-umbrella.h"
+
+  export *
+  module * { export * }
+}
